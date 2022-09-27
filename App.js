@@ -259,17 +259,16 @@ var divListaProductos = document.getElementById('lista-productos');
 
     let busqueda = document.getElementById('busqueda');
 
-    busqueda.addEventListener("keyup", function(){
+    const filtrar = ()=>{
 
-        console.log("hola", productos[1].titulo)
+        const text = busqueda.value.toLowerCase();
 
+        for(let producto of productos){
 
-        let list = productos.filter((item) => item.titulo.match(busqueda.value)
-        )
+            let nombre = producto.titulo.toLowerCase();
+            if(nombre.indexOf(texto) !== -1){
 
-        console.log(list)
-        
-        var divListaProductos = document.getElementById('lista-productos');
+                var divListaProductos = document.getElementById('lista-productos');
         divListaProductos.innerHTML = ""
 
         /* USANDO DOM VOY CREANDO LOS ELEMNTOS QUE NECESITO Y LOS AGREGO AL BODY DE HTML*/
@@ -308,8 +307,78 @@ var divListaProductos = document.getElementById('lista-productos');
                 article.append(h2Precio);
                 //article.append(boton);
                 divProductos.append(article);
+
+                }
+            }
+        }
+    }
+
+    /*
+    busqueda.addEventListener("keyup", function(){
+
+        //console.log("hola", productos[1].titulo)
+
+        buscar = busqueda.value.toLowerCase();
+
+        console.log("buscar", buscar)
+
+
+        let list = productos.filter(item =>{
+            
+            itemName = item.titulo.toLowerCase();
+            
+            console.log("item => ", itemName)
+            
+            
+            console.log("match ===> ", itemName.match(buscar))
+        })
+
+        console.log(list)
+    */
+        
+      //  var divListaProductos = document.getElementById('lista-productos');
+        //divListaProductos.innerHTML = ""
+
+        /* USANDO DOM VOY CREANDO LOS ELEMNTOS QUE NECESITO Y LOS AGREGO AL BODY DE HTML*/
+      /*
+        let divProductos = document.createElement('div');
+        divProductos.className = 'productos';
+
+        divListaProductos.append(divProductos);
+
+        for(var i = 0; i < list.length; i++){
+
+            let article = document.createElement('article');
+                article.className = 'producto';    
+            
+            let divTitulo = document.createElement('div');
+                divTitulo.className = 'titulo';
+
+            let h3titulo = document.createElement('h3');
+                h3titulo.innerHTML = `${productos[i].titulo}`;
+
+            let imagen = document.createElement('img');
+                imagen.className = 'imagen'
+                imagen.src = `${productos[i].URLimage}`;
+
+            let pDescripcion = document.createElement('p');
+                pDescripcion.className = 'descripcion';
+                pDescripcion.innerHTML = `${productos[i].descripcion}`;  
+
+            let h2Precio = document.createElement('h2');
+                h2Precio.className = 'precio';
+                h2Precio.innerHTML = `$ ${productos[i].precio}`;
+                
+                divTitulo.appendChild(h3titulo);
+                article.append(divTitulo);
+                article.append(imagen);
+                article.append(pDescripcion);
+                article.append(h2Precio);
+                //article.append(boton);
+                divProductos.append(article);
         }
     })
+    */
 
     /* 
     import { Producto } from "./Models/Producto";
@@ -317,5 +386,4 @@ var divListaProductos = document.getElementById('lista-productos');
     producto = new Producto();
     producto.test= "hola";
     console.log(producto.test);
-    
     */

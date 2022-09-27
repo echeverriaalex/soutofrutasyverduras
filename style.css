@@ -210,6 +210,14 @@ nav{
     margin: auto;
 }
 
+#busqueda{
+
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+}
+
 .productos{
 
     width: 90%;
