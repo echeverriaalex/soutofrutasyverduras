@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Souto frutas y verduras</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="./assets/mediaqueries.css">
+        <link rel="stylesheet" type="text/css" href="./assets/animations.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="images/icono.jpg">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="logo-container" href="#start">
+                    <img class="logo-souto" src="images/souto sin autoservicio.png">
+                </a>
+                <label for="menu-toggle" class="menu-label">
+                    <p>Menu</p>
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <input type="checkbox" id="menu-toggle">
+                <ul id="menu-list">
+                    <li><a href="#start">Inicio</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#contact">Contáctanos</a></li>
+                    <li><a href="#ubication">Nuestra ubicación</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="welcome-container">
+                    <a href="#start">
+                        <img class="logo-souto" src="images/souto sin autoservicio.png">
+                    </a>
+                    <p>Frutas y Verduras</p>
+                    <h1>Tu verdulería de confianza</h1>
+                </div>
+                <img src="./images/hero.jpg" alt="">
+            </section>
+
+            <section id="products" class="products-section">
+                <h2>Algunos de nuestros productos</h2>
+                <div id="product-list" class="lista-productos"></div>
+            </section>
+
+            <section id="contact">
+                <h2>Contáctanos</h2>
+                
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-map-pin"></i>
+                        Avenida Edison 2645, Mar del Plata
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.instagram.com/soutofrutasyverduras/">
+                        <i class="fa-brands fa-instagram"></i>
+                        soutofrutasyverduras
+                    </a>
+                </li>
+
+                <div class="contact">
+                    <a href="tel:+542235353384">
+                        <i class="fa-solid fa-phone icon-contact"></i>
+                        <p>+54 223- 535-3384</p>
+                    </a>
+                </div>
+
+
+                <li>
+                    <a href="https://wa.me/+5492235353384">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <p>+54 223- 535-3384</p>
+                    </a>
+                </li>
+
+            </section>
+
+
+            <section id="ubication">
+                <h2>Nuestra ubicación</h2>
+                <div class="maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196.34844385693808!2d-57.56659419451435!3d-38.05698572970301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584de1239ed8a19%3A0x95d5314e781099e3!2sSouto%20Autoservicio!5e0!3m2!1ses-419!2sar!4v1728106031308!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1728106157695!6m8!1m7!1skgFyML831LnNQpvwfTxcqA!2m2!1d-38.05690537161207!2d-57.56669943555919!3f130.17703432925063!4f-2.73615182895945!5f1.4596239483275268" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
+
+
+        </main>
+        
+        <footer>
+            <div class="div-sucursales">
+                <h3 class="titulo-sucursales"> Sucursales en Mar del Plata</h3>
+                <ul class="lista-sucursales">
+                    <li class="direccion-sucursal"> Avenida Edison 2645</li>
+                </ul>
+            </div>
+        </footer>
+        
+        <script src="App.js">  </script>
+    </body>
+</html>
