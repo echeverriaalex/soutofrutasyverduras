@@ -19,7 +19,25 @@
 
     #menu-list{
         display: none;
+        position: absolute;
+        top: 60px;
+        
+        left: 2%;
+        right: 2%;
         flex-direction: column;
+        
+        width: 96%;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        border-radius: 0px 0px 15px 15px;
+        border-top: none;
+        border: 1px solid white;
+    }
+
+    #menu-toggle:checked + #menu-list{
+        display: flex;
+        /*animation: desplegar 1s ease-in-out;*/
     }
 
     main{
@@ -38,7 +56,7 @@
         align-items: center;
         gap: 20px;
         max-width: unset;
-        padding: 20px;
+        padding: 10px;
     }
 
     .welcome-container{
@@ -66,7 +84,7 @@
 
     section h1, section h2{
         color: var(--text-white);
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .products-section{
@@ -74,16 +92,61 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 20px;
         background: var(--primary-color);
         border-radius: 15px;
-        padding: 5px;
+        padding: 10px;
     }
 
 
     .products-section h2{
-        font-size: 16px;
+        font-size: 24px;
         color: var(--text-white);
     }
+
+
+    .others{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 15px;
+        background: #f8f8f8;
+    }
+
+    .others img{
+    
+        height: 200px;
+        width: 400px;
+    
+        
+    }
+
+    .featured-products{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        height: 250px;
+        width: 100%;
+
+        border-bottom: 2px solid black;
+    }
+
+    .featured-products p{
+        width: 50%;
+    }
+
+    .featured-products img{
+        max-width: 70%;
+        max-height: 100%;
+    }
+
+
+
 
     #product-list{
         width: 100%;

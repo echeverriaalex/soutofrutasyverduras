@@ -1,5 +1,71 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+
+
+/*
+tipos de letra para despues probar
+
+.electrolize-regular {
+  font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.zen-dots-regular {
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 700
+
+.space-grotesk-<uniquifier> {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.orbitron-<uniquifier> {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 700
+
+.jura-<uniquifier> {
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
+
 
 *{
     padding: 0px;
@@ -36,6 +102,18 @@
 }
 */
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
 header{
     background: var(--primary-color);
     width: 100%;
@@ -43,11 +121,15 @@ header{
     justify-content: center;
     align-items: center;
     height: var(--height-nav);
-    padding: 10px 40px;
+    padding: 10px 100px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
 }
 
 nav{
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,6 +154,7 @@ nav{
 #menu-list{
     display: flex;
     gap: 30px;
+    background: var(--primary-color);
 }
 
 
@@ -81,17 +164,36 @@ nav{
     font-size: 20px;
 }
 
-
-
-
 main{
-    margin: 10px 0px;
+    top: 60px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 10px 50px;
+
+    margin-bottom: 50px;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+section h1, section h2{
+    font-family: "Jura", sans-serif;
+    color: var(--text-white);
+}
+
+section li a{
+    color: var(--text-white);
+    text-decoration: none;
 }
 
 .hero{
@@ -101,9 +203,7 @@ main{
     gap: 20px;
     width: 100%;
     max-width: 1400px;
-    padding: 20px;
     background: var(--primary-color);
-    border-radius: 15px;
 }
 
 .welcome-container{
@@ -114,14 +214,42 @@ main{
     gap: 20px;
 }
 
-.welcome-container a{
+.welcome-container .home-button{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.welcome-container .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    background: #139b06;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.welcome-container .button img{
+    height: 100%;
+}
+
+.welcome-container .button p{
+    
+    
+    font-size: 20px;
+}
+
+
 .hero h1{
     color: var(--text-white);
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-style: normal;
+    
+    font-family: "Zen Dots", sans-serif;
 }
 
 .hero p{
@@ -139,21 +267,7 @@ main{
 }
 
 
-section{
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    background: var(--primary-color);
-}
 
-section h1, section h2{
-    color: var(--text-white);
-}
-
-section li a{
-    color: var(--text-white);
-    text-decoration: none;
-}
 
 
 .products-section{
@@ -161,9 +275,8 @@ section li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     background: var(--primary-color);
-    border-radius: 15px;
-    padding: 20px;
 }
 
 .products-section h2{
@@ -171,8 +284,46 @@ section li a{
     color: var(--text-white);
 }
 
+.others{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: #f8f8f8;
+}
 
 
+.others img{
+    border-radius: 12px;
+
+    /*height: 300px;*/
+    width: 400px;
+
+    
+}
+
+.featured-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    height: 400px;
+    width: 50%;
+
+}
+
+.featured-products p{
+    color: var(--text-white);
+}
+
+.featured-products img{
+    max-width: 100%;
+    height: 88%;
+}
 
 #product-list{
     width: 100%;
@@ -249,7 +400,7 @@ section li a{
 }
 
 /* Contact */
-#contact{
+.contact-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,8 +408,31 @@ section li a{
     gap: 20px;
 }
 
-#contact a{
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-section .contact{
+    padding: 5px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    border-radius: 12px;
+    padding: 10px 10px;
+}
+
+.contact img{
+    height: 100%;
+}
+
+
+.contact{
     font-size: 20px;
+    color: black;
 }
 
 
@@ -270,9 +444,7 @@ section li a{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
     background: var(--primary-color);
-    border-radius: 15px;
 }
 
 .maps{
@@ -286,50 +458,38 @@ section li a{
     height: 600px;
 }
 
-.div-sucursales{
 
-    padding: 0px 0px 0px 0px;
-    height: var(--height-sucursales);
-    /*margin-left: 3%;
-    margin-right: 3%;*/
+
+footer{
+    padding: 20px;
+    background: var(--primary-color);
 }
 
-.titulo-sucursales{
 
-    padding-top: 10px;
-    margin: 10px 0px 10px 0px;
+
+.div-sucursales{
+    height: var(--height-sucursales);
+}
+
+
+.titulo-sucursales{
     text-align: center;
     font-size: var(--title-size-sucursales);
     color: white;
-    
 }
 
 .lista-sucursales{
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
 }
 
 .direccion-sucursal{
-
     color: white;
     font-size: 20px;
     margin: 5px 10px 5px 10px;
     display: inline-block;
     margin-right: 20px;
-}
-
-button{
-    width: 90%;
-    height: 40px;
-    text-align: center;
-    font-size: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    cursor: pointer;
-}
-
-
-footer{
-    background: var(--primary-color);
 }
 

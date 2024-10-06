@@ -1,19 +1,5 @@
 /*import { Product } from "./Models/Product.js";*/
 
-/*
-let RegistrarBebidas = ()=>{
-
-    let descripcion = prompt("Ingrese descripcion del product: ")
-    let precio = prompt("Ingrese precio del product: ")
-    let stock = prompt("Ingrese stock del product: ")
-
-
-    console.log(descripcion + " " + precio + " " + stock)
-};
-
-RegistrarBebidas();
-*/
-
 class Product{
 
     constructor(image, title, description, price){
