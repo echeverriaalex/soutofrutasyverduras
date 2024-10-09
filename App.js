@@ -1,22 +1,22 @@
+let arrayProducts = []
 
-const getData = () =>{
-    fetch('productos.json')
+fetch('productos.json')
     .then(response => response.json())
     .then(data => {
-        //return data
-
-        console.log(data);
-        
+        showProducts(data)
     })
     .catch(err => console.log("\nError al leer el archivo de productos")
     )
-}
-
-console.log("muestro la data del archivo");
-console.log(getData());
 
 
 
+//console.log("muestro la data del archivo");
+//console.log(arrayProducts);
+
+
+
+
+/*
 const root = "./images/products/";
 
 let arrayImages = [
@@ -112,10 +112,6 @@ let arrayTitles = [
 let arrayDescriptions = []
 let arrayPrices = []
 
-
-let arrayProducts = []
-
-
 for(let i=0; arrayImages.length; i++){
 
     let obj = {
@@ -124,12 +120,8 @@ for(let i=0; arrayImages.length; i++){
         //description: arrayDescriptions[i],
         //price: arrayPrices[i],
     }
-
     arrayProducts.push(obj);
 }
-
-
-
 
 class Product{
 
@@ -148,6 +140,7 @@ class Product{
         return this.title+" "+ this.description+" "+ this.price;
     }
 }
+*/
 
 const productListDOM = document.getElementById('product-list');
 
@@ -194,10 +187,12 @@ const createArticle = (title, image, description, price) =>{
     return product;
 }
 
-productList.forEach(product =>{
-    let productDOM = createArticle(product.title, product.image, product.description, product.price);
-    productListDOM.append(productDOM)
-})
+const showProducts = (product) =>{
+    //productList.forEach(product =>{
+        let productDOM = createArticle(product.title, product.image, product.description, product.price);
+        productListDOM.append(productDOM)
+    //})
+}
 
 /*
 for(let i =0; i < productList.length; i++){
