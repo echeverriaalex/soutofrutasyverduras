@@ -1,146 +1,221 @@
-let arrayProducts = []
-
-fetch('productos.json')
-    .then(response => response.json())
-    .then(data => {
-        showProducts(data)
-    })
-    .catch(err => console.log("\nError al leer el archivo de productos")
-    )
-
-
-
-//console.log("muestro la data del archivo");
-//console.log(arrayProducts);
-
-
-
-
-/*
-const root = "./images/products/";
-
-let arrayImages = [
-        root + "ajo.webp",
-        root + "apio.jpg",
-        root + "banana.avif",
-        root + "batata boñato.jpg",
-        root + "barenjena.jpg",
-        root + "brocoli.webp",
-        root + "cebolla colorada.webp",
-        root + "cebolla.jpg",
-        root + "ciruela.jpg",
-        root + "banana.avif",
-        root + "manzana.jpg",
-        root + "pera.jpg",
-        root + "mandarina.webp",
-        root + "naranja.jfif",
-        root + "berenjena.jpg",
-        root + "apio.jpg",
-        root + "tomate.jpg",
-        root + "uva.jpg",
-        root + "frutilla.jpg",
-        root + "zapallo.jpg",
-        root + "sandia.jpg",
-        root + "zanahoria.jpg",
-        root + "brocoli.webp",
-        root + "peregil.jpg",
-        root + "tomates cherry.jpg",
-        root + "legucha criolla.jpg",
-        root + "ciruela.jpg",
-        root + "pomelo rosado.jfif",
-        root + "limon.jpg",
-        root + "puerro.avif",
-        root + "espinaca.jpg",
-        root + "cebolla.jpg",
-        root + "cebolla colorada.webp",
-        root + "pepino.jpg",
-        root + "mango.jpg",
-        root + "batata boñato.jpg",
-        root + "kiwi.avif",
-        root + "papa blanca.jpg",
-        root + "papa colorada.jfif",
-        root + "papa negra.jpg",
-        root + "ajo.webp",
-        root + "remolacha.jpg",
-    ]
-
-let arrayTitles = [
-    "ajo",
-    "apio",
-    "banana",
-    "batata boñato",
-    "barenjena",
-    "brocoli",
-    "cebolla colorada",
-    "cebolla",
-    "ciruela",
-    "banana",
-    "manzana",
-    "pera",
-    "mandarina",
-    "naranja",
-    "berenjena",
-    "apio",
-    "tomate",
-    "uva",
-    "frutilla",
-    "zapallo",
-    "sandia",
-    "zanahoria",
-    "brocoli",
-    "peregil",
-    "tomates cherry",
-    "legucha criolla",
-    "ciruela",
-    "pomelo rosado",
-    "limon",
-    "puerro",
-    "espinaca",
-    "cebolla",
-    "cebolla colorada",
-    "pepino",
-    "mango",
-    "batata boñato",
-    "kiwi",
-    "papa blanca",
-    "papa colorada",
-    "papa negra",
-    "ajo",
-    "remolacha",
+let arrayProductsJSON = [
+    {
+        "image": "./images/products/banana.avif",
+        "title": "Banana",
+        "description": "banana ecuador",
+        "price": 60
+    },
+    {
+        "image": "./images/products/manzana.jpg",
+        "title": "Manzana",
+        "description": "manzana deliciosa",
+        "price": 90
+    },
+    {
+        "image": "./images/products/manzana_verde.jpg",
+        "title": "Manzana verde",
+        "description": "manzana verde deliciosa",
+        "price": 90
+    },
+    {
+        "image": "./images/products/pera.jpg",
+        "title": "Pera",
+        "description": "pera especial",
+        "price": 100
+    },
+    {
+        "image": "./images/products/mandarina.webp",
+        "title": "Mandarina",
+        "description": "mandarina 100% natural",
+        "price": 120
+    },
+    {
+        "image": "./images/products/naranja.jfif",
+        "title": "Naranja",
+        "description": "naranja para exprimido",
+        "price": 150
+    },
+    {
+        "image": "./images/products/berenjena.jpg",
+        "title": "Berenjena",
+        "description": "berenjena de temporada",
+        "price": 94
+    },
+    {
+        "image": "./images/products/apio.jpg",
+        "title": "Apio",
+        "description": "apio de huerta",
+        "price": 40
+    },
+    {
+        "image": "./images/products/tomate.jpg",
+        "title": "Tomate",
+        "description": "tomate para ensalada",
+        "price": 250
+    },
+    {
+        "image": "./images/products/tomate_perita.webp",
+        "title": "Tomate perita",
+        "description": "tomate perita para ensalada",
+        "price": 250
+    },
+    {
+        "image": "./images/products/tomates_cherry.jpg",
+        "title": "Tomate cherry",
+        "description": "tomates cherry",
+        "price": 500
+    },
+    {
+        "image": "./images/products/uva.jpg",
+        "title": "Uva",
+        "description": "uva especial",
+        "price": 300
+    },
+    {
+        "image": "./images/products/frutilla.jpg",
+        "title": "Frutilla",
+        "description": "frutilla de campo",
+        "price": 350
+    },
+    {
+        "image": "./images/products/zapallo.jpg",
+        "title": "Zapallo",
+        "description": "zapallo calabaza",
+        "price": 100
+    },
+    {
+        "image": "./images/products/sandia.jpg",
+        "title": "Sandia",
+        "description": "sandia especial",
+        "price": 50
+    },
+    {
+        "image": "./images/products/zanahoria.jpg",
+        "title": "Zanahoria",
+        "description": "zanahoria espacial para ensalada",
+        "price": 60
+    },
+    {
+        "image": "./images/products/brocoli.webp",
+        "title": "Brocoli",
+        "description": "brocoli de huerta",
+        "price": 45
+    },
+    {
+        "image": "./images/products/peregil.jpg",
+        "title": "Peregil",
+        "description": "peregil de huerta",
+        "price": 50
+    },
+    
+    {
+        "image": "./images/products/legucha_criolla.jpg",
+        "title": "Lechuga",
+        "description": "legucha criolla",
+        "price": 70
+    },
+    {
+        "image": "./images/products/ciruela.jpg",
+        "title": "Ciruela",
+        "description": "ciruela de estacion",
+        "price": 40
+    },
+    {
+        "image": "./images/products/pomelo_rosado.jfif",
+        "title": "Pomelo",
+        "description": "pomelo dulce",
+        "price": 80
+    },
+    {
+        "image": "./images/products/limon.jpg",
+        "title": "Limon",
+        "description": "limon especial",
+        "price": 90
+    },
+    {
+        "image": "./images/products/puerro.avif",
+        "title": "Puerro",
+        "description": "puerro de huerta",
+        "price": 15
+    },
+    {
+        "image": "./images/products/espinaca.jpg",
+        "title": "Espinaca",
+        "description": "espinaca natural",
+        "price": 80
+    },
+    {
+        "image": "./images/products/cebolla.jpg",
+        "title": "Cebolla",
+        "description": "cebolla de calidad",
+        "price": 120
+    },
+    {
+        "image": "./images/products/cebolla_colorada.webp",
+        "title": "Cebolla colorada",
+        "description": "cebolla de calidad",
+        "price": 120
+    },
+    {
+        "image": "./images/products/pepino.jpg",
+        "title": "Pepino",
+        "description": "pepino de oferta",
+        "price": 100
+    },
+    {
+        "image": "./images/products/mango.jpg",
+        "title": "Mango",
+        "description": "mango natural",
+        "price": 140
+    },
+    {
+        "image": "./images/products/batata_boñato.jpg",
+        "title": "Batata",
+        "description": "batata de estacion",
+        "price": 90
+    },
+    {
+        "image": "./images/products/kiwi.avif",
+        "title": "Kiwi",
+        "description": "kiwi especial",
+        "price": 120
+    },
+    {
+        "image": "./images/products/papa_blanca.jpg",
+        "title": "Papa blanca",
+        "description": "papa blanca",
+        "price": 80
+    },
+    {
+        "image": "./images/products/papa_colorada.jfif",
+        "title": "Papa colorada",
+        "description": "papa colorada",
+        "price": 80
+    },
+    {
+        "image": "./images/products/papa_negra.jpeg",
+        "title": "Papa negra",
+        "description": "papa negra",
+        "price": 80
+    },
+    {
+        "image": "./images/products/ajo.webp",
+        "title": "Ajo",
+        "description": "ajo de oferta",
+        "price": 110
+    },
+    {
+        "image": "./images/products/remolacha.jpg",
+        "title": "Remolacha",
+        "description": "remolacha de oferta",
+        "price": 70
+    }
 ]
 
-let arrayDescriptions = []
-let arrayPrices = []
-
-for(let i=0; arrayImages.length; i++){
-
-    let obj = {
-        image: arrayImages[i],
-        title: arrayTitles[i],
-        //description: arrayDescriptions[i],
-        //price: arrayPrices[i],
+arrayProductsJSON.sort((a, b) => {
+        return a.title - b.title
     }
-    arrayProducts.push(obj);
-}
-
-class Product{
-
-    constructor(image, title, description, price){
-        this.image = image;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-    }
-
-    getTitulo(){return this.title;}
-    getDescripcion(){return this.description;}
-    getPrecio(){return this.price;}
-    
-    getInformacion() {
-        return this.title+" "+ this.description+" "+ this.price;
-    }
-}
-*/
+)
 
 const productListDOM = document.getElementById('product-list');
 
@@ -187,257 +262,7 @@ const createArticle = (title, image, description, price) =>{
     return product;
 }
 
-const showProducts = (product) =>{
-    //productList.forEach(product =>{
-        let productDOM = createArticle(product.title, product.image, product.description, product.price);
-        productListDOM.append(productDOM)
-    //})
-}
-
-/*
-for(let i =0; i < productList.length; i++){
-    let productDOM = createArticle(productList[i].title, productList[i].image, productList[i].description, productList[i].price);
+arrayProductsJSON.forEach(product =>{
+    let productDOM = createArticle(product.title, product.image, product.description, product.price);
     productListDOM.append(productDOM)
-}
-    */
-
-
-
-    /* USANDO DOM VOY CREANDO LOS ELEMNTOS QUE NECESITO Y LOS AGREGO AL BODY DE HTML*/
-    /*
-    let divProducts = document.createElement('div');
-        divProducts.className = 'products';
-
-        for(var i = 0; i < products.length; i++){
-
-            let article = document.createElement('article');
-                article.className = 'product';    
-            
-            let divTitulo = document.createElement('div');
-                divTitulo.className = 'titulo';
-
-            let h3titulo = document.createElement('h3');
-                h3titulo.innerHTML = `${products[i].titulo}`;
-
-
-            let containterImage = document.createElement('div');
-            containterImage.className = 'containter-image';
-
-            let imagen = document.createElement('img');
-                imagen.className = 'imagen'
-                imagen.src = `${products[i].URLimage}`;
-
-            containterImage.append(imagen);
-
-            let pDescripcion = document.createElement('p');
-                pDescripcion.className = 'descripcion';
-                pDescripcion.innerHTML = `${products[i].descripcion}`;  
-
-            let h2Precio = document.createElement('h2');
-                h2Precio.className = 'precio';
-                h2Precio.innerHTML = `$ ${products[i].precio}`;
-                
-                divTitulo.appendChild(h3titulo);
-                article.append(divTitulo);
-                article.append(containterImage);
-                article.append(pDescripcion);
-                article.append(h2Precio);
-
-                divListaProducts.append(article);
-        }
-
-    */
-
-    /* 
-    window.onload = function(){
-
-        var contenedor = document.getElementsById('bienvenida');
-        var contenedorimagen = document.getElementsById('bienvenida');
-
-        contenedor.style.visibility = 'hidden';
-        contenedor.style.opacity = '0';
-
-        contenedorimagen.style.visibility = 'hidden';
-        contenedorimagen.style.opacity = '0';
-
-        document.getElementsById('bienvenida').style.display = 'none';
-    }
-
-    $(window).on("load", function(){
-        $(".bienvenida").fadeOut("slow");
-    });
-     */
-
-    /*
-    let lista = []
-    lista = fetch("./products.json").then(response => response.json())
-    .then(lista.forEach(verdura => {
-
-        let article = document.createElement('article');
-        article.className = 'product';    
-    
-        let divTitulo = document.createElement('div');
-            divTitulo.className = 'titulo';
-
-        let h3titulo = document.createElement('h3');
-            h3titulo.innerHTML = `${verdura[Titulo]}`;
-
-        let imagen = document.createElement('img');
-            imagen.className = 'imagen'
-            imagen.src = `${verdura.URLimage}`;
-
-        let pDescripcion = document.createElement('p');
-            pDescripcion.className = 'descripcion';
-            pDescripcion.innerHTML = `${verdura.descripcion}`;  
-
-        let h2Precio = document.createElement('h2');
-            h2Precio.className = 'precio';
-            h2Precio.innerHTML = `$ ${verdura.precio}`;
-        
-        divTitulo.appendChild(h3titulo);
-        article.append(divTitulo);
-        article.append(imagen);
-        article.append(pDescripcion);
-        article.append(h2Precio);
-
-        divListaProducts.append(article)
-        document.body.append(divListaProducts);    
-    }));
-
-    */
-
-
-    //let busqueda = document.getElementById('busqueda');
-
-    /*
-    const filtrar = ()=>{
-
-        const text = busqueda.value.toLowerCase();
-
-        for(let product of products){
-
-            let nombre = product.titulo.toLowerCase();
-            if(nombre.indexOf(texto) !== -1){
-
-                var divListaProducts = document.getElementById('lista-products');
-        divListaProducts.innerHTML = ""
-        */
-
-        /* USANDO DOM VOY CREANDO LOS ELEMNTOS QUE NECESITO Y LOS AGREGO AL BODY DE HTML*/
-        /*
-        let divProducts = document.createElement('div');
-        divProducts.className = 'products';
-
-        divListaProducts.append(divProducts);
-
-        for(var i = 0; i < list.length; i++){
-
-            let article = document.createElement('article');
-                article.className = 'product';    
-            
-            let divTitulo = document.createElement('div');
-                divTitulo.className = 'titulo';
-
-            let h3titulo = document.createElement('h3');
-                h3titulo.innerHTML = `${products[i].titulo}`;
-
-            let imagen = document.createElement('img');
-                imagen.className = 'imagen'
-                imagen.src = `${products[i].URLimage}`;
-
-            let pDescripcion = document.createElement('p');
-                pDescripcion.className = 'descripcion';
-                pDescripcion.innerHTML = `${products[i].descripcion}`;  
-
-            let h2Precio = document.createElement('h2');
-                h2Precio.className = 'precio';
-                h2Precio.innerHTML = `$ ${products[i].precio}`;
-                
-                divTitulo.appendChild(h3titulo);
-                article.append(divTitulo);
-                article.append(imagen);
-                article.append(pDescripcion);
-                article.append(h2Precio);
-                //article.append(boton);
-                divProducts.append(article);
-
-                }
-            }
-        }
-    }
-        */
-
-    /*
-    busqueda.addEventListener("keyup", function(){
-
-        //console.log("hola", products[1].titulo)
-
-        buscar = busqueda.value.toLowerCase();
-
-        console.log("buscar", buscar)
-
-
-        let list = products.filter(item =>{
-            
-            itemName = item.titulo.toLowerCase();
-            
-            console.log("item => ", itemName)
-            
-            
-            console.log("match ===> ", itemName.match(buscar))
-        })
-
-        console.log(list)
-    */
-        
-      //  var divListaProducts = document.getElementById('lista-products');
-        //divListaProducts.innerHTML = ""
-
-        /* USANDO DOM VOY CREANDO LOS ELEMNTOS QUE NECESITO Y LOS AGREGO AL BODY DE HTML*/
-      /*
-        let divProducts = document.createElement('div');
-        divProducts.className = 'products';
-
-        divListaProducts.append(divProducts);
-
-        for(var i = 0; i < list.length; i++){
-
-            let article = document.createElement('article');
-                article.className = 'product';    
-            
-            let divTitulo = document.createElement('div');
-                divTitulo.className = 'titulo';
-
-            let h3titulo = document.createElement('h3');
-                h3titulo.innerHTML = `${products[i].titulo}`;
-
-            let imagen = document.createElement('img');
-                imagen.className = 'imagen'
-                imagen.src = `${products[i].URLimage}`;
-
-            let pDescripcion = document.createElement('p');
-                pDescripcion.className = 'descripcion';
-                pDescripcion.innerHTML = `${products[i].descripcion}`;  
-
-            let h2Precio = document.createElement('h2');
-                h2Precio.className = 'precio';
-                h2Precio.innerHTML = `$ ${products[i].precio}`;
-                
-                divTitulo.appendChild(h3titulo);
-                article.append(divTitulo);
-                article.append(imagen);
-                article.append(pDescripcion);
-                article.append(h2Precio);
-                //article.append(boton);
-                divProducts.append(article);
-        }
-    })
-    */
-
-    /* 
-    import { Product } from "./Models/Product";
-
-    product = new Product();
-    product.test= "hola";
-    console.log(product.test);
-    */
+})
