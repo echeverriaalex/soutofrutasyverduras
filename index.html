@@ -9,13 +9,22 @@
         <link rel="stylesheet" type="text/css" href="./assets/mediaqueries.css">
         <link rel="stylesheet" type="text/css" href="./assets/animations.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="shortcut icon" href="images/icono.jpg">
+        <link rel="shortcut icon" href="./images/logos/icono.jpg">
     </head>
     <body>
+
+        <div class="screen">
+            <div class="welcome-container" href="#welcome">
+                <img src="images/logos/souto.png">
+                <h1>Frutas y Verduras</h1>
+            </div>
+            <a href="#start">Descubre!</a>
+        </div>
+
         <header>
             <nav>
                 <a class="logo-container" href="#start">
-                    <img class="logo-souto" src="images/souto sin autoservicio.png">
+                    <img class="logo-souto" src="images/logos/souto.png">
                 </a>
                 <label for="menu-toggle" class="menu-label">
                     <p>Menu</p>
@@ -26,74 +35,71 @@
                     <li><a href="#start">Inicio</a></li>
                     <li><a href="#products">Productos</a></li>
                     <li><a href="#contact">Contáctanos</a></li>
-                    <li><a href="#ubication">Nuestra ubicación</a></li>
+                    <!-- <li><a href="#ubication">Nuestra ubicación</a></li> -->
                 </ul>
             </nav>
         </header>
         <main>
             <section id="start" class="hero">
-                <div class="welcome-container">
+                <div class="start-container">
                     <a class="home-button" href="#start">
-                        <img class="logo-souto" src="images/souto sin autoservicio.png">
+                        <img class="logo-souto" src="images/logos/souto.png">
                     </a>
                     <h1>Frutas y Verduras</h1>
-                    <!--
-                    <p>Tu verdulería de confianza</p>
-                    -->
-
-
                     <a class="button" href="https://wa.me/+5492235353384">
                         <img src="./images/contact/whatsapp.png" alt="" srcset="">
                         <p>Hace tu consulta</p>
                     </a>
-
-
                 </div>
-                <img src="./images/hero.jpg" alt="">
+                <img src="./images/logos/hero.jpg" alt="">
             </section>
             <section id="products" class="products-section">
                 <h2>Algunos de nuestros productos</h2>
                 <div class="others">
                     <div class="featured-products">
                         <p class="title">Helados Grido</p>
-                        <img src="./images/products/helados grido.jpg" alt="">
+                        <img src="./images/products/helados_grido.jpg" alt="">
                     </div>
                     <div class="featured-products">
                         <p class="title">Postres El Original</p>
-                        <img class="postre" src="./images/products/el original postre.jpg" alt="">
+                        <img class="postre" src="./images/products/original_postre.jpg" alt="">
                     </div>
                 </div>
                 <div id="product-list" class="lista-productos"></div>
             </section>
             <section id="contact" class="contact-section">
                 <h2>Contáctanos</h2>
-                <ul class="contact-container">
-                    <li>                        
-                        <a class="contact" href="https://www.google.com/maps/place/Souto+Autoservicio/@-38.056957,-57.566642,21z/data=!4m6!3m5!1s0x9584de1239ed8a19:0x95d5314e781099e3!8m2!3d-38.0569573!4d-57.5666423!16s%2Fg%2F11fx7lkg0p?hl=es-419&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
-                            <img src="./images/contact/ubicacion.png" alt="" srcset="">
-                            Avenida Edison 2645
-                        </a>
-                    </li>
-                    <li>
-                        <a class="contact" href="https://www.instagram.com/soutofrutasyverduras/">
-                            <img src="./images/contact/instagram.webp" alt="" srcset="">
-                            <p>soutofrutasyverduras</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="contact" href="tel:+542235353384">
-                            <img src="./images/contact/telefono.webp" alt="" srcset="">
-                            <p>+54 223- 535-3384</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="contact" href="https://wa.me/+5492235353384">
-                            <img src="./images/contact/whatsapp.png" alt="" srcset="">
-                            <p>+54 223- 535-3384</p>
-                        </a>
-                    </li>
-                </ul>
+                <div class="data-block">
+                    <ul class="contact-container">
+                        <li>                        
+                            <a class="contact" href="https://www.google.com/maps/place/Souto+Autoservicio/@-38.056957,-57.566642,21z/data=!4m6!3m5!1s0x9584de1239ed8a19:0x95d5314e781099e3!8m2!3d-38.0569573!4d-57.5666423!16s%2Fg%2F11fx7lkg0p?hl=es-419&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D">
+                                <img src="./images/contact/ubicacion.png" alt="" srcset="">
+                                Avenida Edison 2645
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact" href="https://www.instagram.com/soutofrutasyverduras/">
+                                <img src="./images/contact/instagram.webp" alt="" srcset="">
+                                <p>soutofrutasyverduras</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact" href="tel:+542235353384">
+                                <img src="./images/contact/telefono.webp" alt="" srcset="">
+                                <p>+54 223- 535-3384</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact" href="https://wa.me/+5492235353384">
+                                <img src="./images/contact/whatsapp.png" alt="" srcset="">
+                                <p>+54 223- 535-3384</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1728106157695!6m8!1m7!1skgFyML831LnNQpvwfTxcqA!2m2!1d-38.05690537161207!2d-57.56669943555919!3f130.17703432925063!4f-2.73615182895945!5f1.4596239483275268" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </section>
+            <!--
             <section id="ubication">
                 <h2>Nuestra ubicación</h2>
                 <div class="maps">
@@ -101,6 +107,7 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1728106157695!6m8!1m7!1skgFyML831LnNQpvwfTxcqA!2m2!1d-38.05690537161207!2d-57.56669943555919!3f130.17703432925063!4f-2.73615182895945!5f1.4596239483275268" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
+            -->
         </main>
         <footer>
             <div class="div-sucursales">
