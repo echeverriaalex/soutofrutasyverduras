@@ -266,3 +266,7 @@ arrayProductsJSON.forEach(product =>{
     let productDOM = createArticle(product.title, product.image, product.description, product.price);
     productListDOM.append(productDOM)
 })
+
+
+const client = document.getElementById('nameClient');
+const mesagge = `Hola! mi nombre es ${client}, quisiera saber el precio total de este pedido `;
